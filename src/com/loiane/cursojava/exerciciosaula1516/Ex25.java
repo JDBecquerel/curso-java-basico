@@ -19,16 +19,12 @@ public class Ex25 {
 			produto = 1; total = 0; dinheiro = 0; troco = 0; i = 0; fimCompra = 1;
 			System.out.println("Lojas Tabajara");
 			
-			
-				
 				while(produto != 0){
 					i++;
 					
 					System.out.print("Produto " + i + ": R$ ");
 					produto = scan.nextDouble();
 					total = total + produto;
-					
-					
 				}
 				
 				System.out.println("Total: R$ " + total);

@@ -12,7 +12,7 @@ public class Arrays {
 		//.
 		//.
 		//..
-		//double tempDia365 = 32; NÃO
+		//double tempDia365 = 32; Nï¿½O
 		
 		
 		double[] temperaturas = new double[365];
@@ -22,14 +22,14 @@ public class Arrays {
 		temperaturas[3] = 33;
 		temperaturas[4] = 33.1;
 		
-		System.out.println("O valor da temperatura do dia 1 é: " + temperaturas[0]);
+		System.out.println("O valor da temperatura do dia 1 Ã©: " + temperaturas[0]);
 		
 		System.out.println("O tamanho do array: " + temperaturas.length);
 		
 		System.out.println("Valores do array: " + temperaturas);
 		
 		for(int i = 0; i < temperaturas.length; i++){
-			System.out.println("O valor da temperatura do dia " + (i+1) + " é: " + temperaturas[i]);
+			System.out.println("O valor da temperatura do dia " + (i+1) + " Ã©: " + temperaturas[i]);
 		}
 		
 		for(double temp : temperaturas){
