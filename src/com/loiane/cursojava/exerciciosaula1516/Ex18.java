@@ -13,7 +13,7 @@ public class Ex18 {
 		boolean primo = true;
 		int cont = 0;
 		
-		System.out.println("Digite um número para verificar se é primo: ");
+		System.out.println("Digite um nÃºmero para verificar se Ã© primo: ");
 		num = scan.nextInt();
 		
 		for(int i = 1; i <= num; i++){
@@ -23,10 +23,10 @@ public class Ex18 {
 		}
 		
 		if(cont <= 2){
-			System.out.println("É um número primo.");
+			System.out.println("Ã© um nÃºmero primo.");
 		}
 		else{
-			System.out.println("Não é um número primo.");
+			System.out.println("NÃ£o Ã© um nÃºmero primo.");
 		}
 		
 	}
