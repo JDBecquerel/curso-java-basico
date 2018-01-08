@@ -17,20 +17,25 @@ public class Ex14 {
         Scanner scan = new Scanner(System.in);
         
         int[] A = new int[10];
-        int media = 0;
+        
+        int soma = 0;
+        int impar = 0;
         
         System.out.println("Insira os elementos do vetor A: ");
         
-        for(int i = 0; i < 10; i++){
+        
+        for(int i = 0; i < A.length; i++){
             System.out.print("A[" + i + "]: ");
             A[i] = scan.nextInt();
             
-            if(A[i]%2 != 0){
-                media += A[i];
+            if(A[i] % 2 != 0){
+                soma += A[i];
+                impar++;
             }
         }
         
-        System.out.println("Media dos elementos ímpares: " + media);
+        System.out.println("Soma: " + soma);
+        System.out.println("Média: " + soma/impar);
     }
     
 }

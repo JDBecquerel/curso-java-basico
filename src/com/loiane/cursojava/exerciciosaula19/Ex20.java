@@ -23,6 +23,7 @@ public class Ex20 {
         System.out.print("Insira a cotação do dólar (U$) em relação ao real (R$): ");
         cot = scan.nextFloat();
         
+        //21
         for(int i = 0; i < 20; i++){
             
             A[i] = (i+1)*cot;

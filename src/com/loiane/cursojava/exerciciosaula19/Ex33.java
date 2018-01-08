@@ -18,7 +18,8 @@ public class Ex33 {
         Scanner scan = new Scanner(System.in);
         
         int[] A = new int[10];
-        int cont = 0;
+        boolean primo = true;
+        String msg = "";
         
         System.out.println("Insira os elementos do vetor A para verificar se é primo: ");
         
@@ -29,24 +30,28 @@ public class Ex33 {
         
         System.out.println("\nVerificação do vetor A:");
         
-        for(int i = 0; i < 10; i++){
+        for(int i = 0; i < A.length; i++){
             
+            primo = true;
             for(int j = 1; j <= A[i]; j++){ 
 		if(A[i]%j == 0 && A[i]%1 == 0){
-                    cont++;
+                    primo = false;
+                    break;
 		}
             }
             
             System.out.print("A[" + i + "]: " + A[i]);
             
-            if(cont <= 2){
-                System.out.println(" é um número primo.");
+            if(primo){
+                msg = " primo";
+                System.out.println(A[i] + msg);
             }
             else{
-                System.out.println(" não é um número primo.");
+                msg = " não é primo";
+                System.out.println(A[i] + msg);
+                
             }
             
-            cont = 0;
         }
     }
     

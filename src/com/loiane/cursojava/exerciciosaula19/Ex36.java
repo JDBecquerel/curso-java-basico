@@ -21,7 +21,12 @@ public class Ex36 {
         
         for(int i = 0; i < 11; i++){
             A[i] = Math.pow(2,i);
-            System.out.println("A[" + i + "]: " + A[i]);
+        }
+        
+        System.out.print("Vetor A = ");
+        
+        for(int i = 0; i < A.length; i++){
+            System.out.print(" " + A[i]);
         }
         
         

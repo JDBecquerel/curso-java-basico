@@ -18,10 +18,10 @@ public class Ex28 {
         Scanner in = new Scanner(System.in);
         
         int[] A = new int[10];
-        int[] B = new int[10];
+        int[] B = new int[A.length];
         System.out.println("Insira os valores do vetor A: ");
         
-        for(int i = 0; i < 10; i++){
+        for(int i = 0; i < A.length; i++){
             System.out.print("A[" + i + "]: ");
             A[i] = in.nextInt();
         }

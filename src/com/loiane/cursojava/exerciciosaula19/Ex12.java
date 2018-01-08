@@ -22,13 +22,18 @@ public class Ex12 {
         
         System.out.println("Insira os elementos do vetor A: ");
         
-        for(int i = 0; i < 10; i++){
+        for(int i = 0; i < A.length; i++){
             System.out.print("A[" + i + "]: ");
             A[i] = scan.nextInt();
             
             soma += A[i];
         }
         
+        System.out.print("Vetor A: ");
+        
+        for(int i = 0; i < A.length; i++){
+            System.out.print(" " + A[i]);
+        }
         System.out.println("Soma: " + soma);
     }
     

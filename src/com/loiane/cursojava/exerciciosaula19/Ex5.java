@@ -18,20 +18,21 @@ public class Ex5 {
         Scanner scan = new Scanner(System.in);
         
         int[] A = new int[10];
-        int[] B = new int[10];
+        int[] B = new int[A.length];
         
         System.out.println("Insira os valores do vetor A: ");
         
-        for(int i = 0; i < 10; i++){
+        for(int i = 0; i < A.length; i++){
                 System.out.print("A[" + i + "]: " + A[i]);
                 A[i] = scan.nextInt();
         }
         
         System.out.println("Os valores do vetor B: ");
         
-        for(int i = 0; i < 10; i++){
+        System.out.print("Vetor B: ");
+        for(int i = 0; i < B.length; i++){
             B[i] = A[i]*i;
-            System.out.println("B["+ i + "]: " + B[i]);
+            System.out.print(B[i] + " ");
             
         }
         

@@ -19,21 +19,21 @@ public class Ex11 {
         
         
         int[] A = new int[10];
-        int cont = 0;
+        int qtdPares = 0;
         
         System.out.println("Insira os elementos do vetor A: ");
         
-        for(int i = 0; i < 10; i++){
+        for(int i = 0; i < A.length; i++){
             
             System.out.print("A[" + i + "]: ");
             A[i] = scan.nextInt();
             
             if(A[i]%2 == 0){
-                cont++;
+                qtdPares++;
             }
         }
         
-        System.out.println("O vetor A tem " + cont + " elementos pares");
+        System.out.println("O vetor A tem " + qtdPares + " elementos pares");
         
         
         

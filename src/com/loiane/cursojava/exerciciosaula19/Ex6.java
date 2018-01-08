@@ -18,25 +18,26 @@ public class Ex6 {
         Scanner scan = new Scanner(System.in);
         
         int[] A = new int[10];
-        int[] B = new int[10];
+        int[] B = new int[A.length];
         
         System.out.println("Insira os valores do vetor A: ");
-        for(int i = 0; i < 10; i++){
+        for(int i = 0; i < A.length; i++){
             System.out.print("Valor na posição " + i + ": ");
             A[i] = scan.nextInt();
         }
         
         System.out.println("Insira os valores do vetor B: ");
         
-        for(int i = 0; i < 10; i++){
+        for(int i = 0; i < B.length; i++){
             System.out.print("Valor na posição " + i + ": ");
             B[i] = scan.nextInt();
         }
         
         
-        int[] C = new int[10];
+        int[] C = new int[B.length];
         
-        for(int i = 0; i < 10; i++){
+        System.out.println();
+        for(int i = 0; i < A.length; i++){
             C[i] = A[i] + B[i];
             System.out.println("Valor na posição " + i + ": " + C[i]);
         }

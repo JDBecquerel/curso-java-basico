@@ -5,6 +5,7 @@
  */
 package com.loiane.cursojava.exerciciosaula19;
 
+import java.text.DecimalFormat;
 import java.util.Scanner;
 
 /**
@@ -16,22 +17,26 @@ public class Ex4 {
     public static void main(String[] args){
        
         Scanner scan = new Scanner(System.in);
+        DecimalFormat df = new DecimalFormat("###,###.###");
+        
         
         double [] vetorA = new double[15];
         
-        for(int i = 0; i < 15; i++){
+        for(int i = 0; i < vetorA.length; i++){
             System.out.print("Digite o número a ser inserido na posição " + i + ":");
             vetorA[i] = scan.nextInt();
         }
         
-        double[] vetorB = new double[15];
+        double[] vetorB = new double[vetorA.length];
         
-        for(int i = 0; i < 15; i++){
+        for(int i = 0; i < vetorA.length; i++){
             vetorB[i] = Math.sqrt(vetorA[i]);
         }
         
-        for(int i = 0; i < 15; i++){
-            System.out.println("O elemento na posição " + i + " do vetorB é: " + vetorB[i]);
+        System.out.print("VetorB: ");
+        
+        for(int i = 0; i < vetorA.length; i++){
+            System.out.print(df.format(vetorB[i]) + " ");
         }
         
         

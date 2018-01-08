@@ -14,7 +14,7 @@ public class ConversaoCelsiusFarenhenit {
 		
 		tempF = (tempC*9/5) + 32;
 		
-		System.out.println("Valor da temperatura em Fahrenheint: " + tempF + " Fº");
+		System.out.println("Valor da temperatura em Fahrenheint: " + tempF + " FÂº");
 		
 
 	}

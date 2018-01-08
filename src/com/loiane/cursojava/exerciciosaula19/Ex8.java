@@ -19,12 +19,12 @@ public class Ex8 {
         
         
         int[] A = new int[10];
-        int[] B = new int[10];
-        int[] C = new int[10];
+        int[] B = new int[A.length];
+        int[] C = new int[A.length];
         
         System.out.println("Insira os valores do vetor A: ");
         
-        for(int i = 0; i < 10; i++){
+        for(int i = 0; i < A.length; i++){
             
             System.out.print("A[" + i + "]: ");
             A[i] = scan.nextInt();
@@ -32,13 +32,13 @@ public class Ex8 {
         
         System.out.println("\nInsira os valores do vetor B:");
         
-        for(int i = 0; i < 10; i++){
+        for(int i = 0; i < B.length; i++){
             
             System.out.print("B[i" + i + "]: ");
             B[i] = scan.nextInt();
         }
         
-        for(int i = 0; i < 10; i++){
+        for(int i = 0; i < C.length; i++){
             
             C[i] = A[i]*B[i];
             System.out.println("C[" + i + "]: " + C[i]);

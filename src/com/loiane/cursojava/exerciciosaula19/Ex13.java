@@ -22,15 +22,21 @@ public class Ex13 {
         
         System.out.println("Insira os elementos do vetor A: ");
         
-        for(int i = 0; i < 10; i++){
+        for(int i = 0; i < A.length; i++){
             
             System.out.print("A[" + i + "]: ");            
             A[i] = scan.nextInt();
             
-            if(A[i]%5 == 0){
+            if(A[i] % 5 == 0){
                 soma += A[i];
             }
         }
+        
+        System.out.print("Vetor A: ");
+        for(int i = 0; i < A.length; i++){
+            System.out.print(" " + A[i]);
+        }
+        System.out.println();
         
         System.out.println("A soma dos múltiplos de 5: " + soma);
     }

@@ -18,11 +18,11 @@ public class Ex10 {
         Scanner scan = new Scanner(System.in);
         
         int[] A = new int[10];
-        int[] B = new int[10];
+        int[] B = new int[A.length];
         
         System.out.println("Insira os elementos do vetor A: ");
         
-        for(int i = 0; i < 10; i++){
+        for(int i = 0; i < A.length; i++){
             
             System.out.print("A[" + i + "]: ");
             A[i] = scan.nextInt();
@@ -31,9 +31,9 @@ public class Ex10 {
         
         System.out.println("");
         
-        for(int i = 0; i < 10; i++){
+        for(int i = 0; i < B.length; i++){
             
-            B[i] = A[i]%2;
+            B[i] = A[i] % 2;
             System.out.println("B[" + i + "]: " + B[i]);
         }
     }

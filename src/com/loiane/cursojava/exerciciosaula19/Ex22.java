@@ -34,9 +34,9 @@ public class Ex22 {
         }
         
         System.out.println("A porcentagem de números zero no vetor é de: " 
-                + (cont0*10) + "%");
+                + ((cont0*100)/A.length) + "%");
         System.out.println("A porcentagem de números um no vetor é de: " 
-                + (cont1*10) + "%");
+                + ((cont1*100)/A.length) + "%");
     }
     
 }

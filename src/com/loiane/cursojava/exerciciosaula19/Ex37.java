@@ -22,7 +22,7 @@ public class Ex37 {
         
         System.out.println("Insira os elementos do vetor A: ");
         
-        for(int i = 0; i < 15; i++){
+        for(int i = 0; i < A.length; i++){
             System.out.print("A[" + i + "]: ");
             A[i] = scan.nextInt();
         }
@@ -31,7 +31,7 @@ public class Ex37 {
         
         System.out.println("\n");
         
-        for(int i = 0; i < 15; i++){
+        for(int i = 0; i < A.length; i++){
             B[i] = 1;
             for(int j = A[i]; j >= 1; j--){
                 B[i] *= j;

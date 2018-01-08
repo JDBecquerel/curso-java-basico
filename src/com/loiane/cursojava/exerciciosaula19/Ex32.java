@@ -31,6 +31,7 @@ public class Ex32 {
             for(int j = 1; j <= 10; j++){
                 System.out.println(A[i] + " X " + j + " = " + A[i]*j);
             }
+            System.out.println();
         }
     }
     

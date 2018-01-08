@@ -17,23 +17,31 @@ public class Ex15 {
         Scanner scan = new Scanner(System.in);
         
         int[] A = new int[10];
-        int perc = 0;
+        int par = 0;
         
         System.out.println("Insira os elementos do vetor A: ");
         
-        for(int i = 0; i < 10; i++){
+        for(int i = 0; i < A.length; i++){
             
             System.out.print("A[" + i + "]: ");
             A[i] = scan.nextInt();
             
             if(A[i]%2 == 0){
-                perc++;
+                par++;
             }
         }
+        
+        int impar = A.length - par;
+        
+        //A.length - 100%
+        //impar      - x
+        //= x.A.length == impar*100;
+        //= x == (impar*100)/A.length
+        int porcImpar = (impar*100)/A.length;
+        int porcPar = 100 - porcImpar;
        
-        System.out.println("A porcentagem dos números pares no vetor A: " + (perc*10) + "%");
-        perc = A.length - perc;
-        System.out.println("A porcentagem dos números ímpares no vetor B: " +  perc*10 + "%");
+        System.out.println("A porcentagem dos números pares no vetor A: " + porcPar + "%");
+        System.out.println("A porcentagem dos números ímpares no vetor B: " +  porcImpar + "%");
     }
     
 }

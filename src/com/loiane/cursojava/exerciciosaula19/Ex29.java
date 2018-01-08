@@ -18,8 +18,8 @@ public class Ex29 {
         Scanner scan = new Scanner(System.in);
         
         int[] A = new int[10];
-        int[] B = new int[10];
-        int[] C = new int[20];
+        int[] B = new int[A.length];
+        int[] C = new int[A.length*2];
         
         System.out.println("Insira os elementos do vetor A: ");
         

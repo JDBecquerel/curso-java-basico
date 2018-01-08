@@ -18,23 +18,28 @@ public class Ex34 {
         Scanner scan = new Scanner(System.in);
         
         int[] A = new int[10];
-        int numPar = 0;
         
         System.out.println("Insira os elementos do vetor A");
         
-        for(int i = 0; i < 10; i++){
+        for(int i = 0; i < A.length; i++){
             System.out.print("A[" + i + "]: ");
             A[i] = scan.nextInt();
         }
         
-        for(int i = 0; i < 10; i++){
+        for(int i = 0; i < A.length; i++){
             System.out.print("A[" + i + "]: ");
-            if(A[i]%2 == 0){
-                numPar++;
+            
+            for(int j = 2; j < A[i]; j++){
+                if(j%2 == 0){
+                    System.out.println(j + " é par");
+                }
             }
-            System.out.println("A relação de pares até agora é " + numPar 
-                    + " de " + i + " números");
+            
+            System.out.println();
+            
         }
+        
+        
         
        
     }

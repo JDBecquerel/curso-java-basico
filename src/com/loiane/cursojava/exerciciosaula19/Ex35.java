@@ -18,27 +18,26 @@ public class Ex35 {
         Scanner scan = new Scanner(System.in);
         
         int[] A = new int[10];
-        int numDiv = 0;
         
         System.out.println("Insira os elementos do vetor A");
         
-        for(int i = 0; i < 10; i++){
+        for(int i = 0; i < A.length; i++){
             System.out.print("A[" + i + "]: ");
             A[i] = scan.nextInt();
         }
-       
-            for(int i = 0; i < 10; i++){
-                for(int j = 1; j <= A[i]; j++){
-                    if(A[i]%j == 0){
-                        numDiv++;
-                    }
+        
+        for(int i = 0; i < A.length; i++){
+            System.out.print("Analisando o numero" + A[i] + ": \n");
+            
+            for(int j = 1; j < A[i]; j++){
+                if(A[i] % j == 0){
+                    System.out.println(j + " é divisor");
                 }
-                System.out.print("A[" + i + "]: ");
-                System.out.println("A relação de divisores do número " + A[i] 
-                        + " é " + numDiv + " de " + (i+1));
-                numDiv = 0;
-                
             }
+            
+            System.out.println();
+            
+        }
             
     }
     
