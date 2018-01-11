@@ -20,6 +20,8 @@ public class ContaCorrente {
     double saldo;
     boolean especial;
     double limite;
+    double limiteEspecial;
+    double valorEspecialUsado;
     
     void sacar(int saque){
         
@@ -28,19 +30,20 @@ public class ContaCorrente {
         if(saque <= saldo && saldo >= 20 && limite > 200){
             
             saldo = saldo - saque;
-            
         }
         
         else if(saque > saldo  && limite > 200){
             
-            System.out.println("\nNão há saldo suficiente para realizar o saque");
-            System.out.print("Limite de " + limite + " do cheque especial" +
-                    "\nUsar cheque especial? (sim - não): ");
-            resposta = scan.next();
+            if(especial){
+                
+                System.out.println("\nNão há saldo suficiente para realizar o saque");
+                System.out.print("Limite de " + limite + " do cheque especial" +
+                        "\nUsar cheque especial? (sim - não): ");
+                resposta = scan.next();
             
-            if(resposta.equalsIgnoreCase("sim")){
-                saldo = saldo - saque;
-                if(saldo >0){
+                if(resposta.equalsIgnoreCase("sim")){
+                    saldo = saldo - saque;
+                    if(saldo >0){
                     limite = limite - saldo;
                 }
                 else{
@@ -51,11 +54,11 @@ public class ContaCorrente {
                 System.out.println("Saindo da operação...");
             }
         }
+    }
         
-        else{
-            System.out.println("Não há saldo suficiente para realizar o saque\n");
-        }
+    
         
+       
     }
     
     void depositar(int valorDeposito){
@@ -92,6 +95,34 @@ public class ContaCorrente {
         }
         else{
             System.out.println("O cliente não está usando cheque especial");
+        }
+    }
+    
+    boolean verificarUsoChequeEspecial(){
+        return saldo < 0;
+    }
+    
+    //jeito da loiane -> mais simples (gostei)
+    boolean realizarSaque(double quantiaASacar){
+   
+        //tem saldo na conta
+        if(saldo >= quantiaASacar){
+           saldo -= quantiaASacar;
+           return true;
+        } else{ //não tem saldo na conta
+            if(especial){
+                //verificar se o limite especial tem saldo
+                double limite = limiteEspecial - saldo;
+                if(limite >= quantiaASacar){
+                    saldo -= quantiaASacar;
+                    return true;
+                } else{
+                    return false;
+                }
+                    
+            } else{
+                return false; //não é especial e não tem saldo suficiente
+            }
         }
     }
     

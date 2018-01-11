@@ -17,9 +17,12 @@ public class Exercicio02 {
         
         conta.num = "99103435-5";
         conta.agencia = "5543-1";
-        conta.saldo = 500;
+        conta.saldo = -10;
         conta.especial = true;
-        conta.limite = 3000;
+        conta.limiteEspecial = 500;
+        conta.valorEspecialUsado = 0;
+        double quantiaASacar = 200;
+        
         
         conta.consultarSaldo();
         conta.verificarChequeEspecial();
