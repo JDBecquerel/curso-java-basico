@@ -3,7 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package com.loiane.cursojava.aula27.labs;
+package com.loiane.cursojava.aula33.labs;
 
 import java.util.Scanner;
 
@@ -19,7 +19,6 @@ public class Exercicio04 {
         Scanner scan = new Scanner(System.in);
         
         
-        
         char sinal;
         boolean ganhou = false;
         boolean jogou = false;
@@ -29,12 +28,12 @@ public class Exercicio04 {
         System.out.println("Jogador 1 = O");
         System.out.println("Jogador 1 = X");
         
-        jogo.inicializarMatriz(jogo.jogo);
+        jogo.inicializarMatriz(jogo.getJogo());
         jogo.imprimirJogoVelha();
         
         while(!ganhou){
             
-            System.out.println("Rodada " + jogo.rodada);
+            System.out.println("Rodada " + jogo.getRodada());
             
             if(jogo.vezJogador1()){
                 System.out.println("É a vez do jogador 1\n");
@@ -63,12 +62,12 @@ public class Exercicio04 {
             } else if(jogo.verificarVencedor('O')){
                 ganhou = true;
                 System.out.println("Parabéns, jogador 2 ganhou!");
-            } else if(jogo.rodada > 9){
+            } else if(jogo.getRodada() > 9){
                 ganhou = true;
                 System.out.println("Ninguém ganhou, deu velha.");
             }
         }   
-   }
+    }
     
     static int valor(String tipoValor, Scanner scan){
         

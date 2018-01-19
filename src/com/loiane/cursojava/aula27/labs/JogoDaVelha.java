@@ -13,7 +13,7 @@ import java.util.Scanner;
  */
 public class JogoDaVelha {
     
-    char jogo[][];
+    char jogo[][] = new char[3][3];
     int rodada;
     
     

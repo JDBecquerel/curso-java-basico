@@ -5,6 +5,8 @@
  */
 package com.loiane.cursojava.aula27.labs;
 
+import java.util.Scanner;
+
 /**
  *
  * @author thiago
@@ -13,6 +15,7 @@ public class Exercicio02 {
     
     public static void main(String[] args){
         
+        Scanner scan = new Scanner(System.in);
         ContaCorrente conta = new ContaCorrente();
         
         conta.num = "99103435-5";
