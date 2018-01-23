@@ -43,6 +43,7 @@ public class Exercicio02 {
             System.out.println("Operações com números inteiros");
             System.out.println(num1 + " + " + num2 + " = " + Calculadora.somar(num1, num2));
             System.out.println(num1 + " - " + num2 + " = " + Calculadora.subtrair(num1, num2));
+            System.out.println(num1 + " * " + num2 + " = " + Calculadora.multiplicar(num1, num2));
             System.out.println(num1 + " / " + num2 + " = " + Calculadora.dividir(num1, num2));
             
         } else {
@@ -53,9 +54,10 @@ public class Exercicio02 {
             System.out.println("Insira o valor do segundo numero: ");
             num2 = scan.nextDouble();
             
-            System.out.println("Operações com números inteiros");
+            System.out.println("Operações com números reais");
             System.out.println(num1 + " + " + num2 + " = " + Calculadora.somar(num1, num2));
             System.out.println(num1 + " - " + num2 + " = " + Calculadora.subtrair(num1, num2));
+            System.out.println(num1 + " * " + num2 + " = " + Calculadora.multiplicar(num1, num2));
             System.out.println(num1 + " / " + num2 + " = " + Calculadora.dividir(num1, num2));
             System.out.println(num1 + " ^ " + num2 + " = " + Calculadora.elevarAPotencia(num1, num2));
             
