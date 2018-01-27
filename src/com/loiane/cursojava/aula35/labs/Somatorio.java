@@ -11,15 +11,25 @@ package com.loiane.cursojava.aula35.labs;
  */
 public class Somatorio {
     
-    public static int somatorio(int num){
-        int soma;
-        if(num > 0){
+    public static int somatorio(int num, int soma){
+        soma += num;
+        
+        if(num == 0){
+            return soma;
+        } else{
             
-        soma = num + somatorio(num);
-        
+            num--;
+            return somatorio(num, soma);
         }
+
+    }
+    
+    public static int somatorio2(int num){
         
-        return num;
+        if(num == 1){
+            return 1;
+        }
+        return num + somatorio2(num-1);
     }
     
 }
