@@ -13,6 +13,8 @@ import java.util.Scanner;
  */
 public class Exercicio02 {
     
+    //versão 1 do exercicio02 da aula 34 
+    
     static void declararVariaveis(String tipoNumero){
         if(tipoNumero == "int"){
             int num1, num2;
@@ -45,6 +47,7 @@ public class Exercicio02 {
             System.out.println(num1 + " - " + num2 + " = " + Calculadora.subtrair(num1, num2));
             System.out.println(num1 + " * " + num2 + " = " + Calculadora.multiplicar(num1, num2));
             System.out.println(num1 + " / " + num2 + " = " + Calculadora.dividir(num1, num2));
+            System.out.println(num1 + "! = " + Calculadora.fatorial(num1));
             
         } else {
             double num1 = 0, num2 = 0;
@@ -60,6 +63,7 @@ public class Exercicio02 {
             System.out.println(num1 + " * " + num2 + " = " + Calculadora.multiplicar(num1, num2));
             System.out.println(num1 + " / " + num2 + " = " + Calculadora.dividir(num1, num2));
             System.out.println(num1 + " ^ " + num2 + " = " + Calculadora.elevarAPotencia(num1, num2));
+            
             
         }
         

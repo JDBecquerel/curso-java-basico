@@ -51,4 +51,14 @@ public class Calculadora {
         return Math.pow(num1, num2);
     }
     
+    public static int fatorial(int fatorial){
+        int resultado = fatorial;
+        if(fatorial == 0)
+            resultado++;
+        while(fatorial > 1)
+            resultado *= --fatorial;
+        
+        return resultado;
+    }
+    
 }
