@@ -29,7 +29,7 @@ public class Calculadora {
     //fatorial(0) = 1;
     public static int fatorial(int num){
         
-        if(num == 0){
+        if(num == 0){ //ponto de parada se não ia rodar em um loop infinito
             return 1;
         }
         

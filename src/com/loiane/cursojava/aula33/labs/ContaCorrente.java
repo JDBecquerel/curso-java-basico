@@ -171,6 +171,11 @@ public class ContaCorrente {
             System.out.print("Agencia: ");
             agencia = scan.next();
             
+            if(verificarContaEAgencia(numConta, agencia)){
+                System.out.println("Dados inseridos inválidos ou incorretos, digite"
+                        + "novamente");
+            }
+            
             if(!verificarContaEAgencia(numConta, agencia)){
                 saldo += valorDeposito;
             }
@@ -187,7 +192,7 @@ public class ContaCorrente {
     private boolean usoChequeEspecial(){
         return this.saldo < 0;
     }
-    boolean verificarUsoChequeEspecial(){
+    public boolean verificarUsoChequeEspecial(){
         return usoChequeEspecial();
     }
     

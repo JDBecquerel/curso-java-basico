@@ -35,6 +35,7 @@ public class Exercicio06 {
 
                 System.out.print("\n->");
                 op = scan.nextInt();
+                
                 if (op > 7 || op < 1) {
                     System.out.println("Entrada inválida, tente novamente com uma opção válida.");
                 } else {

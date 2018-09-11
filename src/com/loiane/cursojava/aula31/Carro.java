@@ -11,11 +11,11 @@ package com.loiane.cursojava.aula31;
  */
 public class Carro {
     
-    public String marca; //public acesso em qualquer lugar do projeto
-    String modelo; //default acesso somente dentro do pacote
+    public String marca; //public acesso a qualquer classe no projeto
+    String modelo; //default acesso as classes dentro do pacote
     int numPassageiros;
     double capCombustivel;
-    private double consumoCombustivel; //private acesso somente dentro da própria classe
+    private double consumoCombustivel; //private somente a própria classe tem acesso
     
     public void exibirAutonomia(){
         System.out.println("A autonomia do carro é: " + capCombustivel*consumoCombustivel + " km");

@@ -27,6 +27,6 @@ public class Calculadora {
             return 1;
         }
         
-        return fibonacci2(num -1) + fibonacci(num -2);
+        return fibonacci2(num -1) + fibonacci2(num -2);
     }
 }

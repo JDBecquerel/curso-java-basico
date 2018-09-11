@@ -22,11 +22,10 @@ public class Exercicio04 {
         char sinal;
         boolean ganhou = false;
         boolean jogou = false;
-        
         int linha, coluna;
 
-        System.out.println("Jogador 1 = O");
         System.out.println("Jogador 1 = X");
+        System.out.println("Jogador 2 = O");
         
         jogo.inicializarMatriz(jogo.getJogo());
         jogo.imprimirJogoVelha();
@@ -50,8 +49,12 @@ public class Exercicio04 {
             linha = valor("linha", scan);
             coluna = valor("coluna", scan);
 
-            if(!jogo.validarJogada(linha, coluna, sinal)){
+            while(!jogo.validarJogada(linha, coluna, sinal)){
+                System.out.println();
                 System.out.println("Posição já usada, tente novamente.");
+                System.out.println();
+                linha = valor("linha", scan);
+                coluna = valor("coluna", scan);
             }
             jogo.imprimirJogoVelha();
 
@@ -83,6 +86,7 @@ public class Exercicio04 {
             if (valor >= 0 && valor <= 2) {
                 valorValido = true;
             } else {
+                System.out.println();
                 System.out.println("Entrada inválida, tente novamente.");
             }
         }

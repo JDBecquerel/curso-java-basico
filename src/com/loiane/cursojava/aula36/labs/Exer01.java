@@ -17,7 +17,6 @@ public class Exer01 {
         
         Scanner scan = new Scanner(System.in);
         Agenda agenda = new Agenda();
-        
         String entrada = null;
 
         System.out.println("Entre com um nome para a agenda");

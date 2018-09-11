@@ -23,18 +23,17 @@ public class ContaCorrente {
     double limiteEspecial;
     double valorEspecialUsado;
     
-    void sacar(int saque){
+    void sacar(double saque){
         
         String resposta;
         
-        if(saque <= saldo && saldo >= 20 && limite > 200){
-            
+        if(saque <= saldo){
             saldo = saldo - saque;
         }
-        
-        else if(saque > saldo  && limite > 200){
-            
+        else{
             if(especial){
+                
+                double limite = limiteEspecial + saldo;
                 
                 System.out.println("\nNão há saldo suficiente para realizar o saque");
                 System.out.print("Limite de " + limite + " do cheque especial" +
@@ -42,16 +41,16 @@ public class ContaCorrente {
                 resposta = scan.next();
             
                 if(resposta.equalsIgnoreCase("sim")){
-                    saldo = saldo - saque;
-                    if(saldo >0){
-                    limite = limite - saldo;
+                    if(limite >= saque){
+                    saldo -= saque;
+                    System.out.println("Operação realizada com sucesso.");
                 }
                 else{
-                    limite = limite + saldo;
+                    System.out.println("Limite insuficiente para retirar " + saque + " de saque.");
                 }
             }
             else{
-                System.out.println("Saindo da operação...");
+                System.out.println("Sem limite especial. Saindo da operação...");
             }
         }
     }
@@ -62,29 +61,10 @@ public class ContaCorrente {
     }
     
     void depositar(int valorDeposito){
-        
-        String numConta = "";
-        String agencia2 = "";
-        System.out.println("\nDepósito");
-        
-        
-        while(!numConta.equals(num) || !agencia2.equals(agencia)){
-            
-            System.out.println("Digite os seguintes dados para depósito: ");
-            System.out.print("Número da conta: ");
-            numConta = scan.next();
-            System.out.print("Agencia: ");
-            agencia2 = scan.next();
-            saldo = saldo + valorDeposito;
-        }
-        
-        System.out.println("Você realizou o depósito de R$ " + valorDeposito + " na conta "
-                + "de Nº " + num + " e agencia " + agencia + "\n");
-        
+        saldo = saldo + valorDeposito;  
     }
     
     void consultarSaldo(){
-            
         System.out.println("O saldo é R$ " + saldo);
     }
     
@@ -112,7 +92,7 @@ public class ContaCorrente {
         } else{ //não tem saldo na conta
             if(especial){
                 //verificar se o limite especial tem saldo
-                double limite = limiteEspecial - saldo;
+                double limite = limiteEspecial + saldo;
                 if(limite >= quantiaASacar){
                     saldo -= quantiaASacar;
                     return true;

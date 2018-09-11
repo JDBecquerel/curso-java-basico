@@ -54,7 +54,7 @@ public class Exer02 {
         Professor professor = new Professor();
         professor.setNome(nomeProf);
         professor.setEmail(emailProf);
-        professor.setEmail(emailProf);
+        professor.setDepartamento(departamentoProf);
         
         curso.setProfessor(professor);
         

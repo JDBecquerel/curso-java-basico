@@ -45,7 +45,6 @@ public class Exer02 {
                     System.out.println("Sair - 8");
 
                     System.out.print("-> ");
-
                     op = scan.nextInt();
 
                     if (op <= 0 || op > 7) {
@@ -59,6 +58,7 @@ public class Exer02 {
                         System.out.println("\nInsira o valor do primeiro numero: ");
                         System.out.print("->");
                         num1 = scan.nextInt();
+                        
                         System.out.println("Insira o valor do segundo numero: ");
                         System.out.print("->");
                         num2 = scan.nextInt();
@@ -71,9 +71,11 @@ public class Exer02 {
                         System.out.println("\nInsira o valor do primeiro numero: ");
                         System.out.print("->");
                         num1 = scan.nextInt();
+                        
                         System.out.println("Insira o valor do segundo numero: ");
                         System.out.print("->");
                         num2 = scan.nextInt();
+                        
                         System.out.println(num1 + " - " + num2 + " = " + Calculadora.subtrair(num1, num2));
                         break;
 
@@ -82,9 +84,11 @@ public class Exer02 {
                         System.out.println("\nInsira o valor do primeiro numero: ");
                         System.out.print("->");
                         num1 = scan.nextInt();
+                        
                         System.out.println("Insira o valor do segundo numero: ");
                         System.out.print("->");
                         num2 = scan.nextInt();
+                        
                         System.out.println(num1 + " * " + num2 + " = " + Calculadora.multiplicar(num1, num2));
                         break;
 
@@ -93,9 +97,11 @@ public class Exer02 {
                         System.out.println("\nInsira o valor do primeiro numero: ");
                         System.out.print("->");
                         num1 = scan.nextInt();
+                        
                         System.out.println("Insira o valor do segundo numero: ");
                         System.out.print("->");
                         num2 = scan.nextInt();
+                        
                         System.out.println(num1 + " / " + num2 + " = " + Calculadora.dividir(num1, num2));
                         break;
 
@@ -104,9 +110,11 @@ public class Exer02 {
                         System.out.println("\nInsira o valor do primeiro numero: ");
                         System.out.print("->");
                         num1 = scan.nextInt();
+                        
                         System.out.println("Insira o valor do segundo numero: ");
                         System.out.print("->");
                         num2 = scan.nextInt();
+                        
                         System.out.println(num1 + " ^ " + num2 + " = " + Calculadora.elevarAPotencia(num1, num2));
                         break;
                         

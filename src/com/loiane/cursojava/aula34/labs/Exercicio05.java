@@ -20,6 +20,7 @@ public class Exercicio05 {
         int op = 0;
         boolean validarEntrada = false;
         boolean sair = false;
+        
         while (!sair) {
             System.out.println("\nConversão de unidades de volume.");
 
@@ -34,6 +35,7 @@ public class Exercicio05 {
 
                 System.out.print("\n->");
                 op = scan.nextInt();
+                
                 if (op > 6 || op < 1) {
                     System.out.println("Entrada inválida, tente novamente com uma opção válida.");
                 } else {

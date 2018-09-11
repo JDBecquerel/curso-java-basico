@@ -29,14 +29,6 @@ public class Lampada {
  
     }
     
-    void exibirDados(String modelo, String tipo, String tensão, int potencia, String cor, int garantiaMeses){
-        System.out.println("Lampada tipo " + tipo);
-        System.out.println("Modelo: " + modelo);
-        System.out.println("Garantia: " + garantiaMeses + " meses");
-        System.out.println("Potência: " + potencia + " W");
-        System.out.println("Tensão: " + tensao);
-        System.out.println("Cor: " + cor);
-    }
     
     void verificarLampada(){
         
@@ -45,6 +37,15 @@ public class Lampada {
         }
         else{
             System.out.println("Lampada está apagada.");
+        }
+    }
+    
+    void mudarEstado(){
+        if(aceso){
+            aceso = false;
+        }
+        else{
+            aceso = true;
         }
     }
     

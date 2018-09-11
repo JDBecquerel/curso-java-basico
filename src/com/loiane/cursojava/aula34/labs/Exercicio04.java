@@ -20,6 +20,7 @@ public class Exercicio04 {
         int op = 0;
         boolean validarEntrada = false;
         boolean sair = false;
+        
         while (!sair) {
             System.out.println("\nConversão de unidades de área.");
 
@@ -33,6 +34,7 @@ public class Exercicio04 {
 
                 System.out.print("->");
                 op = scan.nextInt();
+                
                 if (op > 5 || op < 1) {
                     System.out.println("Entrada inválida, tente novamente com uma opção válida.");
                 } else {

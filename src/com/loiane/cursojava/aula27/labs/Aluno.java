@@ -34,7 +34,6 @@ public class Aluno {
         }
          
          media = soma/3;
-         
          return media;     
     }
     
@@ -47,10 +46,6 @@ public class Aluno {
         }
     }
     
-    void inserirDados(){
-        
-        
-    }
     
     void exibirInfo(){
         int j = 0;

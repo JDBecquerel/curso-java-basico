@@ -26,8 +26,8 @@ public class Exercicio04 {
         
         int linha, coluna;
 
-        System.out.println("Jogador 1 = O");
         System.out.println("Jogador 1 = X");
+        System.out.println("Jogador 2 = O");
         
         jogo.inicializarMatriz(jogo.jogo);
         jogo.imprimirJogoVelha();

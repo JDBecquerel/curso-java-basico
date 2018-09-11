@@ -16,7 +16,9 @@ public class Carro {
     private int numPassageiros;
     private double capCombustivel;
     private double consumoCombustivel; 
-
+    
+    //em encapsulamento todos os atributos são private
+    // e todos os métodos get e set public
     public String getMarca() {
         return marca;
     }

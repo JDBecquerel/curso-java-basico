@@ -11,6 +11,9 @@ package com.loiane.cursojava.aula33;
  */
 public class MinhaCalculadora {
     
+    //overload é quando tem mais de um método com as assinaturas diferentes 
+    //e o mesmo nome: muda o número de parâmetros, tipo dos parâmetros ou o 
+    //tipo que o método retorna; quando chamado.
     public int soma(int num1, int num2){
         return num1 + num2;
     }
@@ -28,6 +31,16 @@ public class MinhaCalculadora {
         int total = 0;
         for(int i = 0; i < vetorInteiros.length; i++){
             total += vetorInteiros[i];
+        }
+        
+        return total;
+    }
+    
+    public double soma(double[] vetorReais){
+        
+        double total = 0;
+        for(int i = 0; i < vetorReais.length; i++){
+            total += vetorReais[i];
         }
         
         return total;

@@ -21,6 +21,8 @@ public class TesteCalculadora {
         
         soma2Valores(1, 2);
         
+        System.out.println(resultSoma);
+        
     }
     
     static int soma2Valores(int num1, int num2){

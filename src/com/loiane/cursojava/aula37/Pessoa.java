@@ -15,7 +15,6 @@ public class Pessoa {
     private String endereco;
     private String telefone;
     private String cpf;
-    
     private String telefoneCelular;
 
     public String getTelefoneCelular() {

@@ -28,6 +28,7 @@ public class Exer01 {
             System.out.println("Após observar o algoritmo da loiane - 3");
             System.out.println("Sair - 4");
             System.out.print("->");
+            
             int op = scan.nextInt();
 
             switch (op) {
@@ -37,7 +38,7 @@ public class Exer01 {
                     System.out.print("->");
                     termo = scan.nextInt();
 
-                    System.out.println("termo: " + termo + ", é o termo desejado: "
+                    System.out.println("O " + termo + "º é o desejado: "
                             + SequenciaFibonacci.fibonacci(termo, 0, 0, 0));
                     System.out.println();
                     break;
@@ -51,7 +52,7 @@ public class Exer01 {
 
                     for (int i = 0; i < termo; i++) {
                         
-                        System.out.print(Calculadora.fibonacci(i) + " ");
+                        System.out.print(" " + Calculadora.fibonacci(i));
                         
                         if (i == (termo - 1)) {
                             System.out.println("\n" + Calculadora.fibonacci(i) + " é o termo desejado ");

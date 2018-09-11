@@ -21,7 +21,7 @@ public class Aluno extends Pessoa {
         this.nomeVisibilidade = "ksmam";
         super.nomeVisibilidade = "kingsman";
         
-        super.setNomeVisibilidade("ksiaki");
+        super.setNomeVisibilidade("ksiaki"); // pode acessar por ser protected
     }
     
     public Aluno(){

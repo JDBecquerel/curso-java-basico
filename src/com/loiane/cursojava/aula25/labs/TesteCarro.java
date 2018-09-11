@@ -24,12 +24,15 @@ public class TesteCarro {
         System.out.println("Marca: " + van.marca);
         System.out.println("Modelo: " + van.modelo);
         
+        //método 25- método sem retorno
         van.exibirAutonomia();
         System.out.println("\nOutro método com retorno para calcular a Autonomia: " + van.obterAutonomia() + " km");
         
+        //Aula 26 - método com retorno
         double qtdCombustivel = van.calcularCombustivel(10);
         double qtdCombustivel2 = van.calcularCombustivel(15);
         
+        //Aula 27 - método com parâmetro
         System.out.println("qtdCombustivel = " + qtdCombustivel);
         System.out.println("qtdCombustivel2 = " + qtdCombustivel2);
         

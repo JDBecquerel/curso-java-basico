@@ -17,7 +17,11 @@ public class Carro {
     double capCombustivel;
     double consumoCombustivel;
     
-    Carro(){ }
+    Carro(){ } // construtor simples e vazio;
+    //construtores também servem para inicializar certos atributos da classe
+    //se precisar, podemos declarar construtores com parâmetro.
+    //ao invés de instanciar a classe e ir setando atributo por atributo
+    //já pode passar todos os atributos no construtor da classe
     
     Carro(String marca_, String modelo_, int numPassageiros_, double capCombustivel_, double consumoCombustivel_){
         marca = marca_;
@@ -28,11 +32,6 @@ public class Carro {
     }
     
     
-    
-    
-    
-    
-   
     
     void exibirAutonomia(){
         System.out.println("A autonomia do carro é: " + capCombustivel*consumoCombustivel + " km");

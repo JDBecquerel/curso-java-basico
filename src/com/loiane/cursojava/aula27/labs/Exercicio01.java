@@ -15,25 +15,18 @@ public class Exercicio01 {
         
         Lampada lampada = new Lampada();
         
-        lampada.modelo = "5W100WE27";
-        lampada.garantiaMeses = 3;
-        lampada.potencia = 100;
-        lampada.tensao = "Bivolt";
-        lampada.cor = "Branca";
         
-        lampada.tipos = new String[1];
-        
-        lampada.tipos[0] = "Led";
-        
-        
-        lampada.exibirDados(lampada.modelo, lampada.tipos[0], lampada.tensao, lampada.potencia, lampada.cor, lampada.garantiaMeses);
-        System.out.println();
-        
-        lampada.aceso = false;
         
         lampada.acenderLampada();
         lampada.verificarLampada();
+        
         lampada.apagarLampada();
+        lampada.verificarLampada();
+        
+        lampada.mudarEstado();
+        lampada.verificarLampada();
+        
+        lampada.mudarEstado();
         lampada.verificarLampada();
     }
     

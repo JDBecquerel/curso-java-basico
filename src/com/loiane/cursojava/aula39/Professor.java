@@ -15,6 +15,15 @@ public class Professor extends Pessoa {
     private double salario;
     private String nomeCurso;
     
+    //posso usar this para a própria classe e o super pra classe pai
+    //protected é parecido com o default com a diferença que as subclasses
+    //também pode acessar seus atributos e métodos
+    
+    //public - qualquer classe pode acessar
+    //private - somente a própria classe acessa
+    //default - somente as classes do próprio pacote podem acessar
+    //protected - as classes do próprio pacote e as subclasses podem acessar
+    
     public void verificarAcesso(){
         this.nomeVisibilidade = "ksmam";
         super.nomeVisibilidade = "kingsman";

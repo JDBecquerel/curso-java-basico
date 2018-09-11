@@ -64,7 +64,7 @@ public class Curso {
                     info += "\n";
                 }
             }
-            info += "\nMedia da turam = " + obterMediaTurma();
+            info += "\nMedia da turma = " + obterMediaTurma();
         }
         
         return info;

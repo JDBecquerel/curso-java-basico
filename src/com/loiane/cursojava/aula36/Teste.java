@@ -29,7 +29,7 @@ public class Teste {
         
         contato.setEndereco(end);
         
-        //relacionamento tem-um telefone
+        //relacionamento tem-muitos (telefones) - usando um array de Telefone
         Telefone telefone = new Telefone();
         telefone.setTipo("celular");
         telefone.setDdd("62");
@@ -45,7 +45,7 @@ public class Teste {
         telefones[0] = telefone;
         telefones[1] = telefone2;
         
-        //contato.setTelefone(telefone);
+        //contato.setTelefone(telefone); -> relacionamento tem-um
         contato.setTelefones(telefones);
         //Teste saída no console
         System.out.println(contato.getNome());
@@ -55,9 +55,11 @@ public class Teste {
             System.out.println(contato.getEndereco().getCidade());
         }
         
-       /* if(contato != null && contato.getTelefone() != null){
+        //mudamos depois de transformar em vetor
+       /*if(contato != null && contato.getTelefone() != null){
             System.out.println(contato.getTelefone().getDdd() + " " + contato.getTelefone().getNumero());
         }*/
+       
        
        if(contato != null && contato.getTelefones() != null){
            for(Telefone t: contato.getTelefones()){

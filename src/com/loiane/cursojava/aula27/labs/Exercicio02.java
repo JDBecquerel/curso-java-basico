@@ -24,22 +24,40 @@ public class Exercicio02 {
         conta.especial = true;
         conta.limiteEspecial = 500;
         conta.valorEspecialUsado = 0;
-        double quantiaASacar = 200;
         
+        boolean saqueEfetuado = conta.realizarSaque(10);
+        if(saqueEfetuado){
+            System.out.println("Saque realizado com sucesso.");
+            conta.consultarSaldo();
+        } else{
+            System.out.println("Saldo insuficiente. Não foi possível realizar o saque.");
+        }
         
+        saqueEfetuado = conta.realizarSaque(500);
+        if(saqueEfetuado){
+            System.out.println("Saque realizado com sucesso.");
+            conta.consultarSaldo();
+        } else{
+            System.out.println("Saldo insuficiente. Não foi possível realizar o saque.");
+        }
+        
+        System.out.println("Depósito de 500 reais");
+        conta.depositar(500);
         conta.consultarSaldo();
-        conta.verificarChequeEspecial();
-        conta.sacar(200);        
-        conta.consultarSaldo();
-        conta.depositar(1000);
-        conta.consultarSaldo();
-        conta.sacar(2000);
-        conta.consultarSaldo();
-        conta.verificarChequeEspecial();
-        conta.sacar(500);
-        conta.consultarSaldo();
-        conta.verificarChequeEspecial();
-        conta.exibirLimite();
+        
+        if(conta.verificarUsoChequeEspecial()){
+            System.out.println("Está usando cheque especial");
+        } else{
+            System.out.println("Não está usando cheque especial");
+        }
+        
+        conta.realizarSaque(600);
+        if(conta.verificarUsoChequeEspecial()){
+            System.out.println("Está usando cheque especial");
+        } else{
+            System.out.println("Não está usando cheque especial");
+        }
+        
     }
     
 }
