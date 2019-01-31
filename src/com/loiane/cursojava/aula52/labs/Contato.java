@@ -16,8 +16,10 @@ public class Contato {
     private int identificador;
     private int contador;
 
+    
     public Contato() {
         contador++;
+        this.identificador = contador;
     }
     
     
@@ -55,6 +57,13 @@ public class Contato {
     }
     
     
-    
+    public String toString(){
+        String s;
+        
+        s = "Contato " + identificador + "\n\nNome: " + nome
+                + "\nTelefone: " + telefone;
+        
+        return s;
+    }
     
 }

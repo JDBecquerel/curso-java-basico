@@ -22,30 +22,57 @@ public class Agenda {
         this.contatos = contatos;
     }
     
-    public void adicionarContato(Contato contato, int i){
-        contatos[i] = contato;
+    public void adicionarContato(Contato contato, int tam){
+        
+        try{
+            if(contato.getIdentificador() < tam && contato.getIdentificador() >= 0){
+                contatos[contato.getIdentificador()] = contato;
+            }
+            throw new NumeroInvalidoException();
+        }
+        catch(NumeroInvalidoException e){
+            System.out.println(e.toString());
+        }
+        
     }
     
-    public boolean consultarContato(String nome, int i){
-        if(this.contatos[i].getNome() == nome ){
-           return true; 
+    public Contato consultarContato(Contato contato){
+        int i = 0;
+        
+        for(i = 0; i < contatos.length; i++){
+            if(this.contatos[i].equals(contato)){
+                return contatos[i]; 
+            }
+        }
+        return null;
+    }
+    
+    public Contato consultarContato(String entrada){
+        int i = 0;
+        
+        for(i = 0; i < contatos.length; i++){
+            if((this.contatos[i].getNome()).equals(entrada) || (this.contatos[i].getTelefone()).equals(entrada)
+                    || (this.contatos[i].getTelefone()).equals(entrada) || this.contatos[i].getIdentificador() == (Integer.parseInt(entrada))){
+                return contatos[i]; 
+            }
+        }
+        return null;
+    }
+    
+    
+    public boolean consultarContato(Contato contato, int tamanhoVetor){
+        int i = 0;
+        
+        for(i = 0; i < tamanhoVetor; i++){
+            if(contato != null){
+                if(contatos[i].equals(contato)){
+                    return true;
+                }
+            }
         }
         return false;
     }
     
-    public boolean consultarContato(int identificador, int i){
-        if(this.contatos[i].getIdentificador() == identificador ){
-           return true; 
-        }
-        return false;
-    }
-    
-    public boolean consultarContato(String nome, int identificador, int i){
-        if(this.contatos[i].getNome() == nome && this.contatos[i].getIdentificador() == identificador ){
-           return true; 
-        }
-        return false;
-    }
     
     
 }

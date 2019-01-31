@@ -9,11 +9,11 @@ package com.loiane.cursojava.aula52.labs;
  *
  * @author thiago
  */
-public class AgendaCheiaException extends Exception {
+public class NumeroInvalidoException extends Exception {
     
     public String toString(){
         String s = "";
-        s = "A agenda está cheia e portanto o contato não pode ser inserido.";
+        s = "Digite um número válido.";
         return s;
     }
 }
