@@ -16,65 +16,67 @@ public class Teste {
     public static void main(String[] args) {
         
         Scanner scan = new Scanner(System.in);
-        String entradaDados;
         
+        String entradaDados;
         boolean sair = false;
         int tam = 3;
         
         Agenda agenda = new Agenda();
-        Contato[] contatos = new Contato[tam];
         int op = 0;
         
         while(!sair){
-            
+          
             while(op > 3 || op < 1){
-                try{
+                
                     System.out.println("------------ MENU ------------");
                     System.out.println();
                     System.out.println("1 - Consultar um contato da agenda");
                     System.out.println("2 - Para adicionar um contato na agenda");
                     System.out.println("3 - Para sair");
+                    
                     System.out.print("-> ");
-                    op = scan.nextInt();
+                    
+                try{
+                    entradaDados = scan.nextLine();
+                    op = Integer.parseInt(entradaDados);
+                    
+                    System.out.println();
+                    
+                    if(op > 3 || op < 1){
+                        throw new NumeroInvalidoException();
+                    }  
                 }
-                catch(Exception e){
-                    System.out.println("Entrada inválida. Insira um número válido.");
+                catch(NumeroInvalidoException e){
+                    System.out.println(e.toString());
                 }
             }
             
             switch(op){
                 case 1: 
-                    try {
-                        System.out.print("Digite alguma informação do contato que deseja consulta(nome, "
-                                + "telefon e identificador: ");
+                    
+                        System.out.print("Digite o nome do contato que deseja consultar: ");
                         entradaDados = scan.nextLine();
                         
-                        Contato possuiContato;
                         
-                        possuiContato = agenda.consultarContato(entradaDados);
-                        
-                        
-                        if (possuiContato != null){
-                            System.out.println("Consulta realizada: ");
-                            System.out.println(possuiContato.toString());
-                         
+                        try{
+                            if(agenda.consultarContatoNome(entradaDados) >= 0){
+                                System.out.println("Contato " + entradaDados +" existe\n");
+                            }
                         }
-                        
-                        throw new ContatoNaoExisteException();
-
-                    }
-                    catch(ContatoNaoExisteException e){
-                        ContatoNaoExisteException contatoException = new ContatoNaoExisteException();
-                        System.out.println(e.toString());
-                    }
+                        catch(ContatoNaoExisteException e){
+                            System.out.println(e.getMessage());
+                        }
                     
                 break;
                 
                 case 2: 
                     try{
-                        Contato contato = new Contato();
                         
-                        System.out.println("Insira os dados do contato: ");
+                        System.out.println("Criando novo contato");
+                        Contato contato = new Contato();
+                       
+                        
+                        System.out.println("\nInsira os dados do contato: ");
                         
                         System.out.print("Nome: ");
                         entradaDados = scan.nextLine();
@@ -84,19 +86,31 @@ public class Teste {
                         entradaDados = scan.nextLine();
                         contato.setTelefone(entradaDados);
                         
-                        agenda.adicionarContato(contato, tam);
+                        System.out.print("email: ");
+                        entradaDados = scan.nextLine();
+                        contato.setEmail(entradaDados);
                         
-                        throw new AgendaCheiaException();
+                        System.out.println();
+                        
+                        System.out.println("Contato a ser criado: ");
+                        System.out.println(contato);
+                        
+                        agenda.adicionarContato(contato);
                     }
                     catch(AgendaCheiaException e){
-                        e.toString();
+                        System.out.println("\n" + e.getMessage());
+                        
+                        System.out.println("\nContatos da agenda\n");
+                        System.out.println(agenda);
                     }
+                    //System.out.println(agenda.toString());
                 break;
                 
                 case 3:
                     System.out.println("Fim do programa...");
                     sair = true;
             }
+            op = 0;
         }
     }      
         

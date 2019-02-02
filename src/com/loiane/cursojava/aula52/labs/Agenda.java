@@ -13,27 +13,25 @@ public class Agenda {
     
     private Contato[] contatos;
     
-
-    public Contato[] getContatos() {
-        return contatos;
-    }
-
-    public void setContatos(Contato[] contatos) {
-        this.contatos = contatos;
-    }
     
-    public void adicionarContato(Contato contato, int tam){
+    public Agenda(){
+        contatos = new Contato[3];
+    } 
+    
+    public void adicionarContato(Contato contato) throws AgendaCheiaException {
         
-        try{
-            if(contato.getIdentificador() < tam && contato.getIdentificador() >= 0){
-                contatos[contato.getIdentificador()] = contato;
+        boolean cheia = true;
+        for(int i = 0; i < contatos.length; i++){
+            if(contatos[i] == null){
+                contatos[i] = contato;
+                cheia = false;
+                break;
             }
-            throw new NumeroInvalidoException();
-        }
-        catch(NumeroInvalidoException e){
-            System.out.println(e.toString());
         }
         
+        if(cheia){
+            throw new AgendaCheiaException();
+        }
     }
     
     public Contato consultarContato(Contato contato){
@@ -47,20 +45,37 @@ public class Agenda {
         return null;
     }
     
-    public Contato consultarContato(String entrada){
+    public int consultarContatoDados(String entrada) throws ContatoNaoExisteException{
         int i = 0;
         
         for(i = 0; i < contatos.length; i++){
-            if((this.contatos[i].getNome()).equals(entrada) || (this.contatos[i].getTelefone()).equals(entrada)
-                    || (this.contatos[i].getTelefone()).equals(entrada) || this.contatos[i].getIdentificador() == (Integer.parseInt(entrada))){
-                return contatos[i]; 
+            if(contatos[i] != null){
+                if((this.contatos[i].getNome()).equalsIgnoreCase(entrada) || (this.contatos[i].getTelefone()).equals(entrada)
+                    || this.contatos[i].getIdentificador() == (Integer.parseInt(entrada))){
+                    return i; 
+                }
             }
         }
-        return null;
+        throw new ContatoNaoExisteException(entrada);
+
+    }
+    
+    public int consultarContatoNome(String nome) throws ContatoNaoExisteException{
+        int i = 0;
+        
+        for(i = 0; i < contatos.length; i++){
+            if(contatos[i] != null){
+                if((this.contatos[i].getNome()).equalsIgnoreCase(nome)){
+                    return i; 
+                }
+            }
+        }
+        throw new ContatoNaoExisteException(nome);
+
     }
     
     
-    public boolean consultarContato(Contato contato, int tamanhoVetor){
+    public boolean consultarContatoEntidade(Contato contato, int tamanhoVetor){
         int i = 0;
         
         for(i = 0; i < tamanhoVetor; i++){
@@ -73,6 +88,16 @@ public class Agenda {
         return false;
     }
     
+    public String toString(){
+        String s = "";
+        
+        for(Contato c : contatos){ 
+            if(c != null){
+                s += c.toString() + "\n\n";
+            }
+        }
+        return s;
+    }
     
     
 }

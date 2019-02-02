@@ -11,7 +11,7 @@ package com.loiane.cursojava.aula52.labs;
  */
 public class AgendaCheiaException extends Exception {
     
-    public String toString(){
+    public String getMessage(){
         String s = "";
         s = "A agenda está cheia e portanto o contato não pode ser inserido.";
         return s;

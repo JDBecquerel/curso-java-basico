@@ -11,10 +11,12 @@ package com.loiane.cursojava.aula52.labs;
  */
 public class Contato {
     
+    private static int contador = 0;
+    
     private String nome;
     private String telefone;
+    private String email;
     private int identificador;
-    private int contador;
 
     
     public Contato() {
@@ -23,13 +25,12 @@ public class Contato {
     }
     
     
+    public String getEmail(){
+        return email;
+    }
     
-    public Contato(String nome, String telefone) {
-        this.nome = nome;
-        this.telefone = telefone;
-        contador++;
-        this.identificador = contador;
-        
+    public void setEmail(String email){
+        this.email = email;
     }
 
     public String getNome() {
@@ -60,8 +61,10 @@ public class Contato {
     public String toString(){
         String s;
         
-        s = "Contato " + identificador + "\n\nNome: " + nome
-                + "\nTelefone: " + telefone;
+        s = "Id: " + identificador;
+        s += "\nNome: " + nome;
+        s +=  "\nTelefone: " + telefone;
+        s += "\nEmail: " + email;
         
         return s;
     }

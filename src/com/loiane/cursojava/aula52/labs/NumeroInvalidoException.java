@@ -13,7 +13,7 @@ public class NumeroInvalidoException extends Exception {
     
     public String toString(){
         String s = "";
-        s = "Digite um número válido.";
+        s = "\nNúmero inválido. Digite um número válido." + "\n";
         return s;
     }
 }
