@@ -21,7 +21,7 @@ public class MultiplosCatch {
                 System.out.println(numeros[i] + "/" + denominadores[i] + " = " + (numeros[i]/denominadores[i]));
             } 
             catch(ArithmeticException e1){
-                System.out.println("Erro ao dividir por zero");
+                System.out.println("Erro ao dividir " + numeros[i] +  " por " + denominadores[i]);
             } 
             catch(ArrayIndexOutOfBoundsException e2){
                 System.out.println("Posição do array inválida");
