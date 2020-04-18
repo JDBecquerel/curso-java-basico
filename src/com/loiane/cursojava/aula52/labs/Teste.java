@@ -17,18 +17,13 @@ public class Teste {
     public static void main(String[] args) {
         
         Scanner scan = new Scanner(System.in);
-        
         String entradaDados;
         boolean sair = false;
-        
         Agenda agenda = new Agenda();
         int op = 0;
         
-        while(!sair){
-          
-            
-                try{
-                    
+        while(!sair){ 
+                try{    
                     System.out.println("==================================");
                     System.out.println("------------ MENU ------------");
                     System.out.println();
@@ -146,7 +141,6 @@ public class Teste {
                         System.out.println("\nContatos da agenda\n");
                         System.out.println(agenda);
                     }
-                    //System.out.println(agenda.toString());
                 break;
                 
                 case 3:
