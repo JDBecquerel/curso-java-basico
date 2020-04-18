@@ -2,7 +2,7 @@ package com.loiane.cursojava.aula13.labs;
 
 import java.util.Scanner;
 
-public class SalárioLiquidoMes {
+public class SalarioLiquidoMes {
 
 	public static void main(String[] args) {
 		

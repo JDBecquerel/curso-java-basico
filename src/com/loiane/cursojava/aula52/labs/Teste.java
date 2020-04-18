@@ -5,6 +5,7 @@
  */
 package com.loiane.cursojava.aula52.labs;
 
+import java.util.InputMismatchException;
 import java.util.Scanner;
 
 /**
@@ -57,14 +58,14 @@ public class Teste {
             
             switch(op){
                 case 1: 
-                    
-                    System.out.print("Digite o ID do contato que deseja consultar: ");
-                    int id = scan.nextInt();
-                    scan.nextLine();
-                    Contato contatoID = new Contato(id);
-                    contatoID = null;
+                	try{
+                		System.out.print("Digite o ID do contato que deseja consultar: ");
+                		int id = scan.nextInt();
+                		scan.nextLine();
+                		Contato contatoID = new Contato(id);
+                		contatoID = null;
                         
-                    try{
+                    
                         contatoID = agenda.consultarContatoID(id);
                         
                         if(contatoID != null){
@@ -77,9 +78,13 @@ public class Teste {
                             System.out.println();
                         }
                     }
+                	catch(InputMismatchException e) {
+                    	System.out.println("Digite apenas um número para consultar o ID");
+                    }
                     catch(ContatoNaoExisteException e){
                         System.out.println(e.getMessage());
                     }
+                    
                     
                 break;
                 
