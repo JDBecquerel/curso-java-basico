@@ -1,4 +1,4 @@
-/*
+ /*
  * To change this license header, choose License Headers in Project Properties.
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
@@ -19,15 +19,16 @@ public class Teste {
         
         String entradaDados;
         boolean sair = false;
-        int tam = 3;
         
         Agenda agenda = new Agenda();
         int op = 0;
         
         while(!sair){
           
-            while(op > 3 || op < 1){
-                
+            
+                try{
+                    
+                    System.out.println("==================================");
                     System.out.println("------------ MENU ------------");
                     System.out.println();
                     System.out.println("1 - Consultar um contato da agenda");
@@ -36,10 +37,9 @@ public class Teste {
                     
                     System.out.print("-> ");
                     
-                try{
+                
                     entradaDados = scan.nextLine();
                     op = Integer.parseInt(entradaDados);
-                    
                     System.out.println();
                     
                     if(op > 3 || op < 1){
@@ -49,29 +49,46 @@ public class Teste {
                 catch(NumeroInvalidoException e){
                     System.out.println(e.toString());
                 }
-            }
+                catch(NumberFormatException e){
+                    System.out.println("\nFormato inválido como entrada do menu "
+                            + "somente números de 1 a 3.");
+                }
+            
             
             switch(op){
                 case 1: 
                     
-                        System.out.print("Digite o nome do contato que deseja consultar: ");
-                        entradaDados = scan.nextLine();
+                    System.out.print("Digite o ID do contato que deseja consultar: ");
+                    int id = scan.nextInt();
+                    scan.nextLine();
+                    Contato contatoID = new Contato(id);
+                    contatoID = null;
                         
+                    try{
+                        contatoID = agenda.consultarContatoID(id);
                         
-                        try{
-                            if(agenda.consultarContatoNome(entradaDados) >= 0){
-                                System.out.println("Contato " + entradaDados +" existe\n");
-                            }
+                        if(contatoID != null){
+                            System.out.println("\nContato com o ID " + 
+                            contatoID.getIdentificador() +" existe");
+                            System.out.println("E os seus dados são:\n");
+                            System.out.println("Nome: " + contatoID.getNome()
+                            + "\n" + "Telefone: " + contatoID.getTelefone()
+                            + "\n" + "Email: " + contatoID.getEmail());
+                            System.out.println();
                         }
-                        catch(ContatoNaoExisteException e){
-                            System.out.println(e.getMessage());
-                        }
+                    }
+                    catch(ContatoNaoExisteException e){
+                        System.out.println(e.getMessage());
+                    }
                     
                 break;
                 
                 case 2: 
                     try{
-                        
+                        boolean cheia = false;
+                        boolean verificacao = false;
+                        cheia = agenda.agendaCheia(); 
+
                         System.out.println("Criando novo contato");
                         Contato contato = new Contato();
                        
@@ -82,17 +99,38 @@ public class Teste {
                         entradaDados = scan.nextLine();
                         contato.setNome(entradaDados);
                         
-                        System.out.print("Telefone: ");
-                        entradaDados = scan.nextLine();
-                        contato.setTelefone(entradaDados);
                         
-                        System.out.print("email: ");
-                        entradaDados = scan.nextLine();
-                        contato.setEmail(entradaDados);
+                        do{
+                            System.out.print("Telefone: ");
+                            entradaDados = scan.nextLine();
+                            verificacao = contato.isTelefone(entradaDados);
+                            if(verificacao){
+                                contato.setTelefone(entradaDados);
+                            }
+                            else{
+                                System.out.println("\nNão é um telefone válido! Digite novamente.");
+                                System.out.println("Formato: (XX) XXXX-XXXX ou (XX) XXXXX-XXXX)");
+                            }
+                        }while(!verificacao);
+                        
+                        
+                        do{
+                            System.out.print("Email: ");
+                            entradaDados = scan.nextLine();
+                            verificacao = contato.isEmail(entradaDados);
+                            if(verificacao){
+                                contato.setEmail(entradaDados);
+                            }
+                            else{
+                                System.out.println("\nNão é um email válido! Digite novamente.");
+                                System.out.println("Formato: fulano@gmail.com");
+                            }
+                        }while(!verificacao);
+  
                         
                         System.out.println();
                         
-                        System.out.println("Contato a ser criado: ");
+                        System.out.println("Dados contato: ");
                         System.out.println(contato);
                         
                         agenda.adicionarContato(contato);
@@ -111,7 +149,7 @@ public class Teste {
                     sair = true;
             }
             op = 0;
+            System.out.println("==================================\n\n\n");
         }
-    }      
-        
+    }       
 }

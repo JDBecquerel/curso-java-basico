@@ -12,14 +12,19 @@ package com.loiane.cursojava.aula52.labs;
 public class ContatoNaoExisteException extends Exception {
     
     private String nomeContato;
+    private int id;
+    
     
     public ContatoNaoExisteException(String nomeContato){
         this.nomeContato = nomeContato;
     }
     
+    public ContatoNaoExisteException(int id){
+        this.id = id;
+    }
     public String getMessage(){
         String s = "";
-        s = "O contato " + nomeContato + " não existe na agenda\n";
+        s = "\nO contato com o id " + id + " não existe na agenda\n";
         
         return s;
     }

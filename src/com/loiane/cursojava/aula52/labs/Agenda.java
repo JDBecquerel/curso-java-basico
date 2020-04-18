@@ -18,32 +18,42 @@ public class Agenda {
         contatos = new Contato[3];
     } 
     
-    public void adicionarContato(Contato contato) throws AgendaCheiaException {
-        
-        boolean cheia = true;
-        for(int i = 0; i < contatos.length; i++){
-            if(contatos[i] == null){
-                contatos[i] = contato;
-                cheia = false;
-                break;
-            }
+    public boolean agendaCheia() throws AgendaCheiaException {
+        boolean cheia = false;
+        if(contatos[contatos.length-1] != null) {
+            if(contatos[contatos.length-1].getIdentificador() >= contatos.length){
+                cheia = true;
+                throw new AgendaCheiaException();
+            } 
         }
         
-        if(cheia){
-            throw new AgendaCheiaException();
-        }
+        return cheia;
     }
     
-    public Contato consultarContato(Contato contato){
+    public void adicionarContato(Contato contato){
+        for(int i = 0; i <= contato.getIdentificador()-1; i++){
+            if(contatos[i] == null){
+                contatos[i] = contato;
+                break;
+            }
+        } 
+    }
+    
+    public Contato consultarContatoID(int id) throws ContatoNaoExisteException{
         int i = 0;
         
         for(i = 0; i < contatos.length; i++){
-            if(this.contatos[i].equals(contato)){
-                return contatos[i]; 
+            if(contatos[i] != null){
+                if(this.contatos[i].getIdentificador() == id){
+                    Contato contato = this.contatos[i];
+                    return contato;
+                }
             }
+            
         }
-        return null;
+        throw new ContatoNaoExisteException(id);
     }
+    
     
     public int consultarContatoDados(String entrada) throws ContatoNaoExisteException{
         int i = 0;

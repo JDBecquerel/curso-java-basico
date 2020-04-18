@@ -24,6 +24,10 @@ public class Contato {
         this.identificador = contador;
     }
     
+    public Contato(int id) {
+        this.identificador = id;
+    }
+    
     
     public String getEmail(){
         return email;
@@ -57,6 +61,20 @@ public class Contato {
         this.identificador = identificador;
     }
     
+    
+     public boolean isTelefone(String numeroTelefone) {
+        return numeroTelefone.matches(".((10)|([1-9][1-9]).)\\s9?[6-9][0-9]{3}-[0-9]{4}") ||
+                numeroTelefone.matches(".((10)|([1-9][1-9]).)\\s[2-5][0-9]{3}-[0-9]{4}");
+    }
+    
+     public boolean isNome(String nome) {
+        return nome.matches("\"\\[A-Z\\]\\[a-z\\]{1,}\"");
+
+    }
+     
+     public boolean isEmail(String email) {
+         return email.matches("^[\\w!#$%&'*+/=?`{|}~^-]+(?:\\.[\\w!#$%&'*+/=?`{|}~^-]+)*@(?:[a-zA-Z0-9-]+\\.)+[a-zA-Z]{2,6}$");
+     }
     
     public String toString(){
         String s;
