@@ -24,7 +24,7 @@ public class ContatoNaoExisteException extends Exception {
     }
     public String getMessage(){
         String s = "";
-        s = "\nO contato com o id " + id + " n√£o existe na agenda\n";
+        s = "\nO contato com o id " + id + " n„o existe na agenda\n";
         
         return s;
     }

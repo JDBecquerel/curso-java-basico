@@ -46,8 +46,8 @@ public class Teste {
                     System.out.println(e.toString());
                 }
                 catch(NumberFormatException e){
-                    System.out.println("\nFormato inv√°lido como entrada do menu "
-                            + "somente n√∫meros de 1 a 3.");
+                    System.out.println("\nFormato inv·llido como entrada do menu "
+                            + "somente n˙meros de 1 a 3.");
                 }
             
             
@@ -57,21 +57,7 @@ public class Teste {
                 		System.out.print("Digite o ID do contato que deseja consultar: ");
                 		int id = scan.nextInt();
                 		scan.nextLine();
-                		Contato contatoID = new Contato(id);
-                		contatoID = null;
-                        
-                    
-                        contatoID = agenda.consultarContatoID(id);
-                        
-                        if(contatoID != null){
-                            System.out.println("\nContato com o ID " + 
-                            contatoID.getIdentificador() +" existe");
-                            System.out.println("E os seus dados s√£o:\n");
-                            System.out.println("Nome: " + contatoID.getNome()
-                            + "\n" + "Telefone: " + contatoID.getTelefone()
-                            + "\n" + "Email: " + contatoID.getEmail());
-                            System.out.println();
-                        }
+                		consultarContato(agenda, id);
                     }
                 	catch(InputMismatchException e) {
                     	System.out.println("Digite apenas um n˙mero para consultar o ID");
@@ -86,54 +72,9 @@ public class Teste {
                 case 2: 
                     try{
                         boolean cheia = false;
-                        boolean verificacao = false;
                         cheia = agenda.agendaCheia(); 
-
-                        System.out.println("Criando novo contato");
-                        Contato contato = new Contato();
-                       
+                        adicionarContato(scan, agenda);
                         
-                        System.out.println("\nInsira os dados do contato: ");
-                        
-                        System.out.print("Nome: ");
-                        entradaDados = scan.nextLine();
-                        contato.setNome(entradaDados);
-                        
-                        
-                        do{
-                            System.out.print("Telefone: ");
-                            entradaDados = scan.nextLine();
-                            verificacao = contato.isTelefone(entradaDados);
-                            if(verificacao){
-                                contato.setTelefone(entradaDados);
-                            }
-                            else{
-                                System.out.println("\nN√£o √© um telefone v√°lido! Digite novamente.");
-                                System.out.println("Formato: (XX) XXXX-XXXX ou (XX) XXXXX-XXXX)");
-                            }
-                        }while(!verificacao);
-                        
-                        
-                        do{
-                            System.out.print("Email: ");
-                            entradaDados = scan.nextLine();
-                            verificacao = contato.isEmail(entradaDados);
-                            if(verificacao){
-                                contato.setEmail(entradaDados);
-                            }
-                            else{
-                                System.out.println("\nN√£o √© um email v√°lido! Digite novamente.");
-                                System.out.println("Formato: fulano@gmail.com");
-                            }
-                        }while(!verificacao);
-  
-                        
-                        System.out.println();
-                        
-                        System.out.println("Dados contato: ");
-                        System.out.println(contato);
-                        
-                        agenda.adicionarContato(contato);
                     }
                     catch(AgendaCheiaException e){
                         System.out.println("\n" + e.getMessage());
@@ -150,5 +91,78 @@ public class Teste {
             op = 0;
             System.out.println("==================================\n\n\n");
         }
-    }       
+    }      
+    
+    public static void consultarContato(Agenda agenda, int id) throws ContatoNaoExisteException {
+    	
+    	Contato contatoID = new Contato(id);
+		contatoID = null;
+        
+    
+        contatoID = agenda.consultarContatoID(id);
+        
+        if(contatoID != null){
+            System.out.println("\nContato com o ID " + 
+            contatoID.getIdentificador() +" existe");
+            System.out.println("E os seus dados s„o:\n");
+            System.out.println("Nome: " + contatoID.getNome()
+            + "\n" + "Telefone: " + contatoID.getTelefone()
+            + "\n" + "Email: " + contatoID.getEmail());
+            System.out.println();
+        }
+    }
+    
+
+    public static void adicionarContato(Scanner scan, Agenda agenda) {
+    	
+    	System.out.println("Criando novo contato");
+        Contato contato = new Contato();
+        String entradaDados = "";
+        boolean verificacao = false;
+        
+        System.out.println("\nInsira os dados do contato: ");
+        
+        System.out.print("Nome: ");
+        entradaDados = scan.nextLine();
+        contato.setNome(entradaDados);
+        
+        
+        do{
+            System.out.print("Telefone: ");
+            entradaDados = scan.nextLine();
+            verificacao = contato.isTelefone(entradaDados);
+            if(verificacao){
+                contato.setTelefone(entradaDados);
+            }
+            else{
+                System.out.println("\nN„o È um telefone v·lido! Digite novamente.");
+                System.out.println("Formato: (XX) XXXX-XXXX ou (XX) XXXXX-XXXX)");
+            }
+        }while(!verificacao);
+        
+        
+        do{
+            System.out.print("Email: ");
+            entradaDados = scan.nextLine();
+            verificacao = contato.isEmail(entradaDados);
+            if(verificacao){
+                contato.setEmail(entradaDados);
+            }
+            else{
+                System.out.println("\nN„o È um email v·lido! Digite novamente.");
+                System.out.println("Formato: fulano@gmail.com");
+            }
+        }while(!verificacao);
+
+        
+        System.out.println();
+        
+        System.out.println("Dados contato: ");
+        System.out.println(contato);
+        
+        agenda.adicionarContato(contato);
+    }
 }
+
+
+

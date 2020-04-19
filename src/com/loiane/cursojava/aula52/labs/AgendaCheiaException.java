@@ -13,7 +13,7 @@ public class AgendaCheiaException extends Exception {
     
     public String getMessage(){
         String s = "";
-        s = "A agenda est√° cheia e portanto o contato n√£o pode ser inserido.";
+        s = "A agenda est· cheia e portanto o contato n„o pode ser inserido.";
         return s;
     }
 }
