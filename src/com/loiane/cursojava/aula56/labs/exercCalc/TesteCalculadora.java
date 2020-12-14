@@ -1,4 +1,5 @@
 package com.loiane.cursojava.aula56.labs.exercCalc;
+import java.util.InputMismatchException;
 import java.util.Scanner;
 
 public class TesteCalculadora {
@@ -92,16 +93,20 @@ public class TesteCalculadora {
 			System.out.println();
 			System.out.print("Deseja sair do programa? (1 - sim, 2 - nao): ");
 			
-			exit = scan.nextInt();
 			
-			do {
-				if(exit < 1 || exit > 2) {
-					System.out.println("Entrada inválida.");
-					System.out.println("Opções válidas:\n(1) - Sair\n(2) - Voltar ao menu");
-					System.out.print("->");
-					exit = scan.nextInt();
-				}
-			}while(exit < 1 || exit > 2);
+			try {
+				exit = scan.nextInt();
+			} catch(InputMismatchException exception) {
+				System.out.println("Entre com um dado inteiro. Sem ser string ou char.");
+				exit = scan.nextInt();
+			}
+			
+			
+			while(exit < 1 || exit > 2) {
+				System.out.println("Entrada inválida.");
+				System.out.println("\nOpções válidas:\n(1) - Sair\n(2) - Voltar ao menu");
+				System.out.print("\n->");
+			}
 		}
 			
 	}
