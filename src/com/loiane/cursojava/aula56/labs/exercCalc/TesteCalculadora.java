@@ -15,7 +15,7 @@ public class TesteCalculadora {
 		boolean invalido = true;
 		
 		while(exit!=1) {
-			System.out.println("####### CALCULADORA #######\n\n");
+			System.out.println("\n\n####### CALCULADORA #######\n\n");
 			System.out.println("(+) - SOMA");
 			System.out.println("(-) - SUBTRAÇÃO");
 			System.out.println("(/) - DIVISÃO");
@@ -94,20 +94,25 @@ public class TesteCalculadora {
 			System.out.print("Deseja sair do programa? (1 - sim, 2 - nao): ");
 			
 			
-			try {
-				exit = scan.nextInt();
-			} catch(InputMismatchException exception) {
-				System.out.println("Entre com um dado inteiro. Sem ser string ou char.");
-				exit = scan.nextInt();
-			}
-			
-			
-			while(exit < 1 || exit > 2) {
-				System.out.println("Entrada inválida.");
-				System.out.println("\nOpções válidas:\n(1) - Sair\n(2) - Voltar ao menu");
-				System.out.print("\n->");
-			}
+			 do {
+				 try {
+						exit = scan.nextInt();
+					} 
+				 
+				 catch(InputMismatchException exception) {
+						System.out.println("\nEntre com um dado inteiro. Sem ser string ou char.");
+						scan.nextLine();
+					}
+				 
+				if(exit < 1 || exit > 2) {
+					System.out.print("Entrada inválida.");
+					System.out.println("\n\nOpções válidas:\n(1) - Sair\n(2) - Voltar ao menu");
+					System.out.print("->");
+				}
+			}while(exit < 1 || exit > 2);
 		}
+		
+		System.out.println("\nPrograma finalizado...");
 			
 	}
 
